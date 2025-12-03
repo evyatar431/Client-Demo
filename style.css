@@ -1,12 +1,21 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+/* Reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
+/* Center container */
 .main-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;  
-    align-items: center;    
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form styling (בשליטתך) */
+#carForm {
+  width: 420px;
+  border-radius: 12px;
 }
