@@ -1,15 +1,23 @@
-$("#carForm").on("submit", function (e) {
-  e.preventDefault();
+$(document).ready(function () {
+  
+  $("#carForm").on("submit", function (e) {
+    e.preventDefault();
 
-  const brand = $("#brand").val();
-  const model = $("#model").val();
+    const brand = $("#brand").val().trim();
+    const model = $("#model").val().trim();
 
-  $.post(
-    "http://localhost:3000/api/cars",
-    { brand, model },
-    function (response) {
-      $("#response").text(response);
-    }
-  );
+    $("#response").text("Saving...");
+
+    $.post(
+      "http://localhost:3000/api/cars",
+      { brand, model },
+      function (response) {
+        $("#response").text(response);
+      }
+    ).fail(function () {
+      $("#response").text("Error: Could not connect to server.");
+    });
+
+  });
+
 });
-// Check woir
